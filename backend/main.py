@@ -40,5 +40,7 @@ async def summary_endpoint(request: ChatRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/health")
+@app.get("/health")
+@app.get("/")
 async def health_check():
-    return {"status": "ok"}
+    return {"status": "ok", "message": "Aura AI Voice Agent Backend is running"}
